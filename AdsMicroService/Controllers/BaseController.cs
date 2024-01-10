@@ -8,9 +8,10 @@ namespace AdsMicroService.Controllers
         private readonly IRepository<T> _repo;
         private readonly ILogger<BaseController<T>> _logger;
 
-        public BaseController(ILogger<BaseController<T>> logger, IRepository<T> _repo)
+        public BaseController(ILogger<BaseController<T>> logger, IRepository<T> repo)
         {
             _logger = logger;
+            _repo = repo;
         }
 
         [HttpGet("{id}")]

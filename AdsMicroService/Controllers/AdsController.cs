@@ -6,9 +6,9 @@ namespace AdsMicroService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AdController : BaseController<Ad>
+    public class AdsController : BaseController<Ad>
     {
-        public AdController(ILogger<BaseController<Ad>> logger, IRepository<Ad> _repo) : base(logger, _repo)
+        public AdsController(ILogger<BaseController<Ad>> logger, IRepository<Ad> _repo) : base(logger, _repo)
         {
         }
     }
