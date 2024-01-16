@@ -1,0 +1,34 @@
+# ms1-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adsmicroservice-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: adsmicroservice
+  template:
+    metadata:
+      labels:
+        app: adsmicroservice
+    spec:
+      containers:
+        - name: adsmicroservice-container
+          image: saltytoona/adsmicroservice:latest
+          ports:
+            - containerPort: 30218
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: adsmicroservice
+spec:
+  selector:
+    app: adsmicroservice
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 30218
+      targetPort: 30218
+      nodePort: 30218
