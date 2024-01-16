@@ -25,7 +25,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'docker.io/${{secrets.DOCKERHUB_USERNAME }}/devopsfrontend:latest'
+          image-ref: 'docker.io/${{secrets.DOCKERHUB_USERNAME }}/adsmicroservice:latest'
           format: 'table'
           exit-code: '1'
           ignore-unfixed: true
@@ -33,4 +33,4 @@ jobs:
           severity: 'CRITICAL,HIGH'
           
       - name: Push Docker image to DockerHub
-        run: docker push ${{secrets.DOCKERHUB_USERNAME }}/devopsfrontend:latest
+        run: docker push ${{secrets.DOCKERHUB_USERNAME }}/adsmicroservice:latest
