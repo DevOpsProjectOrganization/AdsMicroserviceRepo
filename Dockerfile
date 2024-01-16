@@ -14,8 +14,8 @@ RUN dotnet publish -c Release -o out
 # Use the .NET ASP.NET runtime image for the final image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-EXPOSE 50218
-ENV ASPNETCORE_URLS=http://+:50218
+EXPOSE 30218
+ENV ASPNETCORE_URLS=http://+:30218
 
 # Copy the published output from the build environment
 COPY --from=build-env /app/out .

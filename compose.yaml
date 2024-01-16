@@ -1,8 +1,8 @@
 services:
  adsMicroService:
-    image: saltntoona/adsmicroservice
+    image: saltytoona/adsmicroservice
     build: 
       dockerfile: ./Dockerfile
       context: .
     ports:
-      - "50218:50218"
+      - "30218:30218"
